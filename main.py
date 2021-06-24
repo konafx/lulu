@@ -5,7 +5,7 @@ from typing import Optional
 import re
 
 
-def get_dispand_info(url: string) -> Optional[dict]:
+def get_dispand_info(url: str) -> Optional[dict]:
     """
     メッセージリンクから情報を取得します。
     改変元：https://github.com/DiscordBotPortalJP/dispander/blob/f7a0f0592acd8a2912aa51fa10c09de4d8769490/dispander/module.py#L153-L165
