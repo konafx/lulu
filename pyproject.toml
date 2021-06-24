@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "lulu"
+version = "0.1.0"
+description = ""
+authors = ["konafx <afxlieonon@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+"discord.py" = "^1.7.3"
+dispander = {git = "https://github.com/DiscordBotPortalJP/dispander.git", rev = "master"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
