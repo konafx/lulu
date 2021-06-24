@@ -39,23 +39,28 @@ async def internal_delete_dispand(bot: discord.Client, message: discord.Message,
 
     if embed.author is None:
         # author が設定されていない埋め込みメッセージは discord が展開した embed と仮定して削除する
+        print("embed.author is None")
         await message.delete()
         return
 
     if getattr(embed.author, 'url', None) is None:
         # author.url が設定されたいない埋め込みメッセージは discord が展開した embed と仮定して削除する
+        print("embed.author.url is None")
         await message.delete()
         return
 
     params = get_dispand_info(embed.author.url)
     if params is None:
         # params が取得できない埋め込みメッセージは discord が展開した embed (twitterなど) と仮定して削除する
+        print("dispand info is None")
         await message.delete()
         return
 
     if operator_id not in params:
+        print("operator is invalid")
         return
 
+    print("operator is valid")
     await message.delete()
     for message_id in params['extra_messages']:
         extra_message = await message.channel.fetch_message(message_id)
